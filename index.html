@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Roi Scorpion — Développeur web freelance</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;600&display=swap">
+<style>
+:root{--bg:#EEF1F6;--ink:#12163A;--mute:#4A5078;--surf:#FFFFFF;--line:#C9CFE0;--sun:#FFC533;--red:#E4572E;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1330;--ink:#EEF1F6;--mute:#A4ABD0;--surf:#1A1F4A;--line:#2E356B}}
+:root[data-theme="dark"]{--bg:#0F1330;--ink:#EEF1F6;--mute:#A4ABD0;--surf:#1A1F4A;--line:#2E356B}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Trebuchet MS",sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-weight:600}
+nav a{text-decoration:none;margin-left:20px}
+nav .logo{line-height:0;margin:0;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.25rem}
+.hero{display:grid;gap:40px;grid-template-columns:1.15fr .85fr;align-items:center;padding:48px 0 80px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;letter-spacing:-.02em}
+.hero p{max-width:34em;color:var(--mute);margin:22px 0 30px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;margin:0 10px 10px 0}
+.btn.p{background:var(--sun);color:#12163A}
+.btn.w{background:#25D366;color:#0B2E18}
+.btn.s{border:2px solid var(--ink)}
+.ticket{justify-self:center;width:100%;max-width:330px;background:#fff;color:#1b1b1b;font:14px/1.5 "Courier New",monospace;padding:22px 20px 30px;transform:rotate(2deg);box-shadow:0 18px 40px rgba(0,0,0,.28);
+clip-path:polygon(0 0,100% 0,100% 100%,95% 97%,90% 100%,85% 97%,80% 100%,75% 97%,70% 100%,65% 97%,60% 100%,55% 97%,50% 100%,45% 97%,40% 100%,35% 97%,30% 100%,25% 97%,20% 100%,15% 97%,10% 100%,5% 97%,0 100%);}
+@keyframes print{from{clip-path:polygon(0 0,100% 0,100% 0,0 0)}}
+.ticket b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.3rem;display:block;text-align:center}
+.ticket .r{display:flex;justify-content:space-between;gap:10px}
+.ticket hr{border:0;border-top:1px dashed #888;margin:10px 0}
+.ticket .t{font-weight:700;font-size:1.05rem}
+.ticket small{display:block;text-align:center;color:#666;margin-top:10px}
+section{padding:70px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:800;margin-bottom:14px}
+.lead{max-width:38em;color:var(--mute);margin:0 0 34px}
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;margin:0;padding:0;list-style:none}
+.feat li{padding:14px 0;border-bottom:1px solid var(--line)}
+.feat strong{display:block}
+.feat span{color:var(--mute);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin:34px 0 0;padding:0;list-style:none}
+.tags li{background:var(--surf);border:1px solid var(--line);border-radius:8px;padding:7px 14px;font-weight:600}
+.status{display:inline-block;background:var(--red);color:#fff;border-radius:6px;padding:3px 10px;font-size:.85rem;font-weight:600;margin-bottom:16px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.cols h3{font-size:1.3rem;margin-bottom:8px}
+.cols p{margin:0;color:var(--mute)}
+footer{padding:60px 0 50px;border-top:1px solid var(--line)}
+footer h2{font-size:clamp(2rem,5vw,3.4rem)}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:20px}.feat,.cols{grid-template-columns:1fr}.cols{gap:24px}nav a:not(.logo){margin-left:14px}}
+@media (prefers-reduced-motion:reduce){.ticket{animation:none}html{scroll-behavior:auto}}
+
+.tail{transform-box:view-box;transform-origin:50px 52px;animation:sway 3.4s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-6deg)}to{transform:rotate(7deg)}}
+.cl{transform-box:view-box;transform-origin:42px 60px;animation:snap 3s ease-in-out infinite}
+@keyframes snap{0%,68%,100%{transform:rotate(0)}78%{transform:rotate(-8deg)}88%{transform:rotate(3deg)}}
+.eye{animation:glow 2.4s ease-in-out infinite}@keyframes glow{50%{opacity:.3}}
+.crown{animation:gleam 3s ease-in-out infinite}@keyframes gleam{50%{filter:brightness(1.45)}}
+.stage{position:relative;justify-self:center;width:100%;max-width:380px;aspect-ratio:1;display:grid;place-items:center}
+.stage::before{content:"";position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle,rgba(255,197,51,.4),rgba(108,92,231,.22) 55%,transparent 72%);filter:blur(26px);animation:pulse 4s ease-in-out infinite alternate}
+@keyframes pulse{from{opacity:.55;transform:scale(.94)}to{opacity:1;transform:scale(1.06)}}
+.stage>svg{position:relative;width:86%;height:auto;animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.chip{position:absolute;font:600 13px/1 "Courier New",monospace;background:var(--surf);color:var(--ink);border:1px solid var(--line);padding:8px 11px;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,.18);animation:float 4.5s ease-in-out infinite}
+.c1{top:6%;left:-2%}.c2{bottom:22%;right:-4%;animation-delay:-1.5s}.c3{bottom:2%;left:4%;animation-delay:-3s}
+.term{font:600 15px/1 "Courier New",monospace;background:#0B0E26;color:#9FE6B0;padding:13px 16px;border-radius:10px;display:block;width:fit-content;max-width:100%;margin-top:10px;overflow:hidden;white-space:nowrap}
+.typ{display:inline-block;vertical-align:bottom;overflow:hidden;width:0;border-right:2px solid #9FE6B0;animation:type 2.6s steps(35) .7s forwards,blink 1s step-end infinite}
+@keyframes type{to{width:35ch}}@keyframes blink{50%{border-color:transparent}}
+.pgrid{display:grid;grid-template-columns:1fr 330px;gap:40px;align-items:start}
+@media (max-width:760px){.pgrid{grid-template-columns:1fr}.pgrid .ticket{justify-self:center}.c1{left:0}.c2{right:0}.term{font-size:13px}}
+@media (prefers-reduced-motion:reduce){.tail,.cl,.eye,.crown,.stage>svg,.stage::before,.chip{animation:none}.typ{animation:none;width:auto;border:0}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="20" y1="8" x2="80" y2="92"><stop offset="0" stop-color="#FFF0B0"/><stop offset=".45" stop-color="#FFC533"/><stop offset="1" stop-color="#B8720B"/></linearGradient>
+<linearGradient id="rim" gradientUnits="userSpaceOnUse" x1="10" y1="5" x2="90" y2="95"><stop offset="0" stop-color="#FFE9A0"/><stop offset=".5" stop-color="#E8A317"/><stop offset="1" stop-color="#8A5508"/></linearGradient>
+<radialGradient id="disc" cx=".35" cy=".28" r=".85"><stop offset="0" stop-color="#3A42A0"/><stop offset=".6" stop-color="#171C4C"/><stop offset="1" stop-color="#090B22"/></radialGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#000" flood-opacity=".65"/></filter>
+<g id="claw"><path d="M42 60 Q29 58 27 45" fill="none" stroke="url(#gold)" stroke-width="4" stroke-linecap="round"/><path d="M27 46 Q19 38 25 30 Q31 36 27 46Z" fill="url(#gold)"/><path d="M27 46 Q30 38 33 34 Q35 40 27 46Z" fill="url(#gold)"/></g>
+<symbol id="rs" viewBox="0 -12 100 112">
+<circle cx="50" cy="50" r="48" fill="url(#rim)"/><circle cx="50" cy="50" r="43" fill="url(#disc)"/>
+<path d="M14 40 A38 38 0 0 1 50 9" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="3" stroke-linecap="round"/>
+<g class="crown"><path d="M35 7 L38 -6 L44.5 2 L50 -10 L55.5 2 L62 -6 L65 7 Z" fill="url(#gold)" stroke="#8A5508" stroke-width=".8" stroke-linejoin="round"/><circle cx="38" cy="-6" r="1.8" fill="#E4572E"/><circle cx="50" cy="-10" r="2" fill="#E4572E"/><circle cx="62" cy="-6" r="1.8" fill="#E4572E"/></g>
+<g filter="url(#sh)">
+<g stroke="url(#gold)" stroke-width="2" stroke-linecap="round"><path d="M41 58 L31 64"/><path d="M41 63 L30 71"/><path d="M42 68 L34 77"/><path d="M59 58 L69 64"/><path d="M59 63 L70 71"/><path d="M58 68 L66 77"/></g>
+<use href="#claw" class="cl"/><g transform="translate(100,0) scale(-1,1)"><use href="#claw" class="cl"/></g>
+<ellipse cx="50" cy="65" rx="10" ry="14" fill="url(#gold)"/><circle class="eye" cx="46.5" cy="58" r="1.7" fill="#E4572E"/><circle class="eye" cx="53.5" cy="58" r="1.7" fill="#E4572E"/>
+<g class="tail"><path d="M50 52 C36 44 34 27 45 20 C52 16 61 18 60 27" fill="none" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+<path d="M50 52 C36 44 34 27 45 20 C52 16 61 18 60 27" fill="none" stroke="#0F1330" stroke-width="6.2" stroke-dasharray="1 5.6" stroke-dashoffset="2"/>
+<path d="M57 26 L63 27 L61 36 Z" fill="url(#gold)"/></g>
+<path d="M42 62 H58 M43 68 H57 M45 73 H55" stroke="#0F1330" stroke-opacity=".55" stroke-width="1.2"/>
+</g>
+<g font-family="'Bricolage Grotesque','Trebuchet MS',sans-serif" font-weight="800" font-size="21" text-anchor="middle">
+<text x="50" y="94" fill="#4a2b03">RS</text><text x="50" y="92.7" fill="#8a5508">RS</text><text x="50" y="91.4" fill="url(#gold)">RS</text></g>
+</symbol></defs></svg>
+<div class="wrap">
+<nav><a class="logo" href="#" aria-label="Roi Scorpion, accueil"><svg width="52" height="58" viewBox="0 0 100 112" aria-hidden="true"><use href="#rs"/></svg></a><div><a href="#projet">Projet</a><a href="#apropos">À propos</a><a href="#stack">Stack</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero">
+<div>
+<h1>Roi Scorpion : je construis les outils de gestion des commerces d’ici.</h1>
+<p>Étudiant et développeur web freelance au Cameroun. Des applications en français, en FCFA, pensées pour le vrai quotidien d’un commerce.</p>
+<a class="btn p" href="#projet">Voir SecréMatic</a><a class="btn w" href="https://wa.me/237656041712?text=Bonjour%20Roi%20Scorpion%2C%20j%27ai%20un%20projet%20%C3%A0%20vous%20proposer." target="_blank" rel="noopener">WhatsApp</a>
+<div class="term" aria-hidden="true">$ <span class="typ">roi --build "vos outils de gestion"</span></div>
+</div>
+<div class="stage" role="img" aria-label="Logo Roi Scorpion : un scorpion couronné">
+<svg viewBox="0 0 100 112"><use href="#rs"/></svg>
+<span class="chip c1">const roi = "Scorpion";</span><span class="chip c2">deploy() // ok</span><span class="chip c3">&lt;SecréMatic /&gt;</span>
+</div>
+</header>
+
+<section id="projet">
+<div class="pgrid"><div><span class="status">Livré et déployé</span>
+<h2>SecréMatic</h2>
+<p class="lead">Une application web qui gère toute la journée d’un secrétariat-cybercafé : encaisser, suivre le stock, imprimer les reçus et clôturer la caisse. Réalisée pour un client au Cameroun.</p>
+</div>
+<div class="ticket" aria-label="Exemple de reçu généré par SecréMatic">
+<b>SecréMatic</b>
+<div style="text-align:center">Reçu n° 0142</div><hr>
+<div class="r"><span>Photocopie A4 ×20</span><span>1 000</span></div>
+<div class="r"><span>Impression ×2</span><span>500</span></div>
+<div class="r"><span>Saisie document</span><span>1 500</span></div><hr>
+<div class="r t"><span>TOTAL</span><span>3 000 FCFA</span></div>
+<small>Reçu d’exemple, imprimé depuis la caisse</small>
+</div>
+</div>
+<ul class="feat">
+<li><strong>Connexion par code PIN</strong><span>Rapide pour les employés, sans mot de passe à retenir.</span></li>
+<li><strong>Caisse</strong><span>Chaque vente est saisie et enregistrée en quelques touches.</span></li>
+<li><strong>Gestion du stock</strong><span>Le patron sait toujours ce qu’il reste.</span></li>
+<li><strong>Tableau de bord</strong><span>Les chiffres du jour d’un seul regard.</span></li>
+<li><strong>Historique</strong><span>Toutes les opérations restent consultables.</span></li>
+<li><strong>Gestion des employés</strong><span>Chaque personne a son accès.</span></li>
+<li><strong>Reçus imprimables</strong><span>Un reçu propre pour chaque client.</span></li>
+<li><strong>Clôture de caisse</strong><span>Un récapitulatif imprimable en fin de journée.</span></li>
+</ul>
+</section>
+
+<section id="apropos">
+<div class="pgrid" style="grid-template-columns:1.3fr 1fr">
+<div>
+<h2>À propos</h2>
+<p class="lead" style="margin-bottom:0">Je m’appelle Roi Scorpion. Je suis étudiant et développeur web freelance au Cameroun. Je crée des applications pour les commerces et les entreprises d’ici : je comprends d’abord comment le travail se passe au quotidien, puis je construis l’outil qui lui correspond. SecréMatic est l’un de mes premiers contrats professionnels, que j’ai conçu, développé et mis en ligne moi-même.</p>
+</div>
+<ul class="feat" style="grid-template-columns:1fr">
+<li><strong>Basé au Cameroun</strong><span>Je travaille avec des clients locaux.</span></li>
+<li><strong>Freelance</strong><span>Un seul interlocuteur, de l’idée à la mise en ligne.</span></li>
+<li><strong>Interface en français</strong><span>Montants en FCFA, adaptée à vos habitudes.</span></li>
+</ul>
+</div>
+</section>
+
+<section id="stack">
+<h2>Ma boîte à outils</h2>
+<p class="lead">Une stack moderne, légère et facile à déployer, que je maîtrise de bout en bout.</p>
+<ul class="tags"><li>React</li><li>Vite</li><li>Supabase</li><li>Tailwind CSS</li><li>Vercel</li><li>GitHub</li><li>PHP / MySQL</li></ul>
+<div class="cols" style="margin-top:50px">
+<div><h3>Sur mesure</h3><p>Une application construite autour de votre façon de travailler.</p></div>
+<div><h3>Adaptée ici</h3><p>Interface en français, montants en FCFA, contexte des commerces camerounais.</p></div>
+<div><h3>Livrée en ligne</h3><p>Déployée, accessible depuis n’importe quel appareil, prête à l’emploi.</p></div>
+</div>
+</section>
+
+<footer id="contact">
+<svg width="108" height="120" viewBox="0 0 100 112" role="img" aria-label="Logo RS" style="margin-bottom:20px"><use href="#rs"/></svg>
+<h2>Un projet en tête ?</h2>
+<p class="lead">Parlez-moi de votre activité, je vous dirai comment un outil sur mesure peut vous faire gagner du temps.</p>
+<a class="btn w" href="https://wa.me/237656041712?text=Bonjour%20Roi%20Scorpion%2C%20j%27ai%20un%20projet%20%C3%A0%20vous%20proposer." target="_blank" rel="noopener">WhatsApp +237 656 04 17 12</a><a class="btn s" href="mailto:roiscorpion53@gmail.com">roiscorpion53@gmail.com</a><a class="btn s" href="https://github.com/scorpionjj" target="_blank" rel="noopener">GitHub : scorpionjj</a>
+</footer>
+</div>
+</body>
+</html>
